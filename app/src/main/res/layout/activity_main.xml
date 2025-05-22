@@ -5,59 +5,104 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+
 
         <LinearLayout
             android:id="@+id/Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/topbar_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/topbar_ic"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Tips Calculator"
+                android:textColor="@color/texts"
                 android:textAlignment="center"
-                android:text="TITULO PRINCIPAL"
-                android:textSize="30sp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
                 />
 
         </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Header"
+            app:layout_constraintBottom_toTopOf="@id/Result">
 
         <LinearLayout
             android:id="@+id/Billdata"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="70dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginTop="40dp">
+            android:background="@drawable/data_bg"
+
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@color/bars"
                 android:text="Enter bill total:"
                 android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/BillTotal"
-                android:layout_width="match_parent"
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:layout_marginHorizontal="40dp"
-                android:ems="12"
-                android:inputType="text"
-                tools:text="87.64"
-                android:textSize="35sp" />
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="€"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/bars"
+                    android:textSize="35sp"/>
+                <EditText
+                    android:id="@+id/BillTotal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/bars"
+                    android:backgroundTint="@color/texts"
+                    android:inputType="numberDecimal"
+                    tools:text="0.00"
+                    android:hint="0.00"
+                    android:textColorHint="@color/bars"
+                    android:textSize="35sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -66,14 +111,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="70dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginTop="50dp">
+            android:background="@drawable/data_bg"
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/bars"
+                android:textAlignment="center"
                 android:text="Choose Tip:"
                 android:textSize="20sp"/>
 
@@ -81,28 +128,47 @@
                 android:id="@+id/TipsPercentage1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/Tips10"
                     android:layout_width="0dp"
+                    android:layout_marginStart="5dp"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/bars"
                     android:layout_weight="1"
+                    android:textStyle="bold"
                     android:layout_marginEnd="13dp"
+                    android:elevation="30dp"
+                    app:cornerRadius="40dp"
                     android:text="10%"/>
-                <Button
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/Tips15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/bars"
                     android:layout_weight="1"
+                    android:textStyle="bold"
                     android:layout_marginEnd="13dp"
+                    android:elevation="30dp"
+                    app:cornerRadius="40dp"
                     android:text="15%"/>
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/Tips20"
+                    android:layout_marginEnd="5dp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/bars"
                     android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:elevation="30dp"
+                    app:cornerRadius="40dp"
                     android:text="20%"/>
 
             </LinearLayout>
@@ -111,37 +177,77 @@
                 android:id="@+id/TipPercentage2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/Tips25"
                     android:layout_width="0dp"
+                    android:layout_marginStart="5dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/bars"
                     android:layout_marginEnd="13dp"
+                    android:elevation="30dp"
+                    app:cornerRadius="40dp"
                     android:text="25%"/>
-                <Button
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/CustomTips"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="2.16"
-                    android:text="Custom tip %"/>
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/bars"
+                    android:layout_marginHorizontal="30dp"
+                    android:text="Custom tip %"
+                    android:elevation="30dp"
+                    app:cornerRadius="40dp"
+                    android:textAllCaps="false"
+                    />
+
+                <EditText
+                    android:id="@+id/etCustomTip"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.16"
+                    android:textColor="@color/bars"
+                    android:textAlignment="center"
+                    android:backgroundTint="@color/texts"
+                    android:textStyle="bold"
+                    android:textColorHint="@color/bars"
+                    android:hint="Enter custom tip %"
+                    android:inputType="numberDecimal"
+                    android:visibility="gone"/>
 
             </LinearLayout>
+        </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/Split"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_marginTop="50dp">
+                android:background="@drawable/data_bg"
 
+                android:layout_marginTop="30dp"
+                >
+                
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/bars"
                     android:text="Split:"
+                    android:textAlignment="center"
                     android:textSize="20sp"/>
 
                 <LinearLayout
@@ -152,17 +258,16 @@
                     android:gravity="center_vertical"
                     >
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    <ImageButton
                         android:id="@+id/RemoveBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
-                        android:clickable="true"
-                        app:elevation="0dp"
-                        app:pressedTranslationZ="0dp"
-                        app:backgroundTint="@android:color/transparent"
-                        android:backgroundTint="@android:color/transparent"
-                        app:srcCompat="@drawable/ic_remove" />
+                        android:background="@android:color/transparent"
+                        android:padding="0dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_remove"
+                    />
 
                     <TextView
                         android:id="@+id/SplitValue"
@@ -170,51 +275,114 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textAlignment="center"
-                        tools:text="5"
-                        android:textSize="20sp"/>
+                        android:textColor="@color/bars"
+                        android:textStyle="bold"
+                        android:text="1"
+                        android:textSize="24sp"/>
 
-                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    <ImageButton
                         android:id="@+id/AddBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
-                        app:fabSize="mini"
-                        android:scaleType="center"
-                        android:clickable="true"
-                        app:elevation="0dp"
-                        app:pressedTranslationZ="0dp"
-                        app:backgroundTint="@android:color/transparent"
-                        android:backgroundTint="@android:color/transparent"
-                        android:src="@drawable/ic_add"
-                        />
+                        android:background="@android:color/transparent"
+                        android:padding="0dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_add" />
+
 
                 </LinearLayout>
             </LinearLayout>
 
-        </LinearLayout>
+    </LinearLayout>
 
         <LinearLayout
             android:id="@+id/Result"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/result_bg">
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/result_bg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="Total per person"/>
+                android:textColor="@color/texts"
+                android:layout_marginTop="20dp"
+                android:text="Total per person"
+                android:textSize="20sp"/>
 
             <TextView
+                android:id="@+id/tv_Total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/texts"
                 android:textAlignment="center"
-                tools:text="23.45"/>
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="€ 0.00"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/texts"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:text="Bill"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/texts"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:text="Tip"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="40dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_Bill"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/texts"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="€ 0.00"/>
+
+                <TextView
+                    android:id="@+id/tv_Tip"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/texts"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="€ 0.00"/>
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

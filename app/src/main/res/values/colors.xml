@@ -3,4 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="main">#64dfdf</color>
+    <color name="selected">#7137b1</color>
+    <color name="bars">#7137b1</color>
+    <color name="texts">#F8F8FF</color>
+    <color name="contrastData">#1B7E7E7E</color>
 </resources>
