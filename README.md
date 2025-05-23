@@ -4,7 +4,6 @@ This project was developed natively for Android using the Kotlin programming lan
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
 <img src="https://github.com/user-attachments/assets/22226c13-4185-48f6-9c5a-cebb90972bb5" width="260px"/>
-<video src="https://github.com/user-attachments/assets/50af34bc-b6c2-4fcc-8dc1-fbfcfe662880" width="260px"/>
 
 ## technologies
 - Activity
@@ -45,3 +44,5 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+<video src="https://github.com/user-attachments/assets/50af34bc-b6c2-4fcc-8dc1-fbfcfe662880" width="260px"/>
